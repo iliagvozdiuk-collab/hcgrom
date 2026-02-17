@@ -8,71 +8,220 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- test commit -->
-  <main class="hero">
-    <div class="hero__content">
-      <p class="hero__eyebrow">Быстрый старт</p>
-      <h1>Создайте яркий одностраничный сайт за вечер</h1>
-      <p class="hero__text">
-        Чистый HTML и CSS, аккуратная типографика и адаптивная верстка без библиотек.
-      </p>
-      <a class="hero__button" href="#" aria-label="Начать сейчас">Начать сейчас</a>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="Hockey Engine — на главную">Hockey Engine</a>
+
+      <nav class="nav" aria-label="Навигация">
+        <a class="nav__link" href="#coaches">Тренеры</a>
+        <a class="nav__link" href="#schedule">Расписание</a>
+        <a class="nav__link" href="#gallery">Фото</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+      </nav>
+
+      <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">
+        Написать тренеру
+      </a>
     </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hockey Engine — витрина команды">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Hockey Engine</h1>
+          <p class="hero__subtitle">
+            Любительская хоккейная команда в Москве. Тренировки для взрослых: катание, техника, игровые упражнения.
+          </p>
+
+          <ul class="hero__meta" aria-label="Ключевая информация">
+            <li><strong>Город:</strong> Москва</li>
+            <li><strong>Арена:</strong> ЛСК «Молодежка»</li>
+            <li><strong>Адрес:</strong> ул. Молодогвардейская, 63Бс1</li>
+          </ul>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">
+              Написать тренеру в Telegram
+            </a>
+            <a class="btn btn--ghost" href="#schedule">Смотреть расписание</a>
+          </div>
+        </div>
+
+        <div class="hero__media" aria-label="Фото с тренировок (заглушка)">
+          <!-- Можно заменить на реальное фото -->
+          <div class="placeholder placeholder--hero">Фото команды / тренировки</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACHES -->
+    <section class="section" id="coaches" aria-label="Тренеры">
+      <div class="container">
+        <h2 class="section__title">Тренеры</h2>
+        <p class="section__lead">
+          Работаем с любителями: помогаем прокачать катание, технику и понимание игры — с понятной прогрессией.
+        </p>
+
+        <div class="grid grid--cards">
+          <article class="card">
+            <div class="card__media">
+              <div class="placeholder">Фото Егора</div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Егор</h3>
+              <p class="card__text">Главный тренер. Фокус на катании, технике и системной прогрессии.</p>
+              <ul class="list">
+                <li>Постановка базы и исправление ошибок</li>
+                <li>Техника: передачи, контроль шайбы, бросок</li>
+                <li>Понятные задания и обратная связь</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <div class="placeholder">Фото Димы</div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Дима</h3>
+              <p class="card__text">Тренер. Фокус на игровых упражнениях, взаимодействиях и скорости решений.</p>
+              <ul class="list">
+                <li>Игровые упражнения и мини-матчи</li>
+                <li>Позиционная игра и взаимопонимание</li>
+                <li>Темп и интенсивность</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="cta">
+          <p class="cta__text">Хочешь попасть на тренировку? Напиши главному тренеру.</p>
+          <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">Написать</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINING FORMAT -->
+    <section class="section" aria-label="Как проходят тренировки">
+      <div class="container">
+        <h2 class="section__title">Как проходят тренировки</h2>
+        <div class="grid grid--features">
+          <div class="feature">
+            <h3 class="feature__title">Разминка</h3>
+            <p class="feature__text">Подготовка к нагрузке, базовые движения и координация.</p>
+          </div>
+          <div class="feature">
+            <h3 class="feature__title">Катание</h3>
+            <p class="feature__text">Баланс, торможения, ускорения, повороты и стартовые движения.</p>
+          </div>
+          <div class="feature">
+            <h3 class="feature__title">Техника</h3>
+            <p class="feature__text">Ведение, передачи, прием, бросок — с разбором ошибок.</p>
+          </div>
+          <div class="feature">
+            <h3 class="feature__title">Игровая часть</h3>
+            <p class="feature__text">Ситуационные упражнения и мини-матчи под задачи.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section" id="schedule" aria-label="Расписание тренировок">
+      <div class="container">
+        <h2 class="section__title">Расписание</h2>
+        <p class="section__lead">
+          ЛСК «Молодежка», ул. Молодогвардейская, 63Бс1. Актуальные слоты подтверждаем в Telegram.
+        </p>
+
+        <!-- Пока заглушка — потом заменим на реальные дни/время -->
+        <div class="grid grid--schedule">
+          <div class="schedule-card">
+            <h3 class="schedule-card__title">Вторник</h3>
+            <p class="schedule-card__text">20:30 — 22:00</p>
+            <p class="schedule-card__sub">Уровень: любой (по группам)</p>
+          </div>
+          <div class="schedule-card">
+            <h3 class="schedule-card__title">Четверг</h3>
+            <p class="schedule-card__text">21:00 — 22:30</p>
+            <p class="schedule-card__sub">Уровень: любители</p>
+          </div>
+          <div class="schedule-card">
+            <h3 class="schedule-card__title">Суббота</h3>
+            <p class="schedule-card__text">10:00 — 11:30</p>
+            <p class="schedule-card__sub">Уровень: смешанный</p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <p class="cta__text">Хочешь уточнить ближайшую тренировку и стоимость?</p>
+          <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">Написать</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery" aria-label="Фото с тренировок">
+      <div class="container">
+        <h2 class="section__title">Фото с тренировок</h2>
+        <p class="section__lead">Живые моменты со льда. Добавим реальные фото — будет ещё круче.</p>
+
+        <div class="grid grid--gallery">
+          <div class="gallery-item"><div class="placeholder">Фото 1</div></div>
+          <div class="gallery-item"><div class="placeholder">Фото 2</div></div>
+          <div class="gallery-item"><div class="placeholder">Фото 3</div></div>
+          <div class="gallery-item"><div class="placeholder">Фото 4</div></div>
+          <div class="gallery-item"><div class="placeholder">Фото 5</div></div>
+          <div class="gallery-item"><div class="placeholder">Фото 6</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Частые вопросы">
+      <div class="container">
+        <h2 class="section__title">FAQ</h2>
+
+        <div class="faq">
+          <div class="faq__item">
+            <h3 class="faq__q">Можно новичкам?</h3>
+            <p class="faq__a">Да. Подбираем упражнения по уровню и даём понятные подсказки по базовым элементам.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Что нужно взять с собой?</h3>
+            <p class="faq__a">Коньки, клюшку и защиту. Если чего-то не хватает — напиши, подскажем варианты.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Где проходят тренировки?</h3>
+            <p class="faq__a">Москва, ЛСК «Молодежка», ул. Молодогвардейская, 63Бс1.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__q">Как записаться?</h3>
+            <p class="faq__a">Нажми кнопку “Написать” и коротко расскажи про опыт и удобные дни.</p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <p class="cta__text">Готов присоединиться? Напиши тренеру — ответим быстро.</p>
+          <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">Написать</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <section class="section features" id="features">
-    <div class="container">
-      <p class="section__eyebrow">Features</p>
-      <h2 class="section__title">Все, что нужно для старта</h2>
-      <div class="features__grid">
-        <article class="card">
-          <h3>Чистый код</h3>
-          <p>Семантическая разметка и понятная структура, которую легко поддерживать и расширять.</p>
-        </article>
-        <article class="card">
-          <h3>Быстрая загрузка</h3>
-          <p>Никаких тяжелых зависимостей: только HTML и CSS для мгновенного первого рендера.</p>
-        </article>
-        <article class="card">
-          <h3>Адаптивный дизайн</h3>
-          <p>Комфортный просмотр на телефонах, планшетах и десктопах без отдельной мобильной версии.</p>
-        </article>
+  <footer class="footer" aria-label="Подвал сайта">
+    <div class="container footer__inner">
+      <div>
+        <strong>Hockey Engine</strong>
+        <div class="muted">Москва • ЛСК «Молодежка»</div>
+      </div>
+      <div class="muted">
+        Адрес: ул. Молодогвардейская, 63Бс1
       </div>
     </div>
-  </section>
-
-  <section class="section about" id="about">
-    <div class="container about__layout">
-      <div class="about__content">
-        <p class="section__eyebrow">About</p>
-        <h2 class="section__title">Делаем аккуратные сайты для реальных задач</h2>
-        <p class="about__text">
-          Этот шаблон помогает быстро запустить современную страницу с выразительным первым экраном
-          и продуманными секциями. Он легко дорабатывается под продукт, портфолио или сервис.
-        </p>
-      </div>
-      <div class="about__media">
-        <img src="about-image.svg" alt="Иллюстрация процесса создания сайта">
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact" id="contact">
-    <div class="container contact__box">
-      <p class="section__eyebrow">Contact</p>
-      <h2 class="section__title">Оставьте заявку</h2>
-      <form class="contact__form" action="#" method="post">
-        <label class="contact__field">
-          <span>Имя</span>
-          <input type="text" name="name" autocomplete="name" required>
-        </label>
-        <label class="contact__field">
-          <span>Email</span>
-          <input type="email" name="email" autocomplete="email" required>
-        </label>
-        <button class="hero__button contact__button" type="submit">Отправить</button>
-      </form>
-    </div>
-  </section>
+  </footer>
 </body>
+
 </html>
