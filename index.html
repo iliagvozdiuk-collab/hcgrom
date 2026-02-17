@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой лендинг</title>
+  <meta name="description" content="Одностраничный сайт с hero-секцией и кнопкой.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Быстрый старт</p>
+      <h1>Создайте яркий одностраничный сайт за вечер</h1>
+      <p class="hero__text">
+        Чистый HTML и CSS, аккуратная типографика и адаптивная верстка без библиотек.
+      </p>
+      <a class="hero__button" href="#" aria-label="Начать сейчас">Начать сейчас</a>
+    </div>
+  </main>
+
+  <section class="section features" id="features">
+    <div class="container">
+      <p class="section__eyebrow">Features</p>
+      <h2 class="section__title">Все, что нужно для старта</h2>
+      <div class="features__grid">
+        <article class="card">
+          <h3>Чистый код</h3>
+          <p>Семантическая разметка и понятная структура, которую легко поддерживать и расширять.</p>
+        </article>
+        <article class="card">
+          <h3>Быстрая загрузка</h3>
+          <p>Никаких тяжелых зависимостей: только HTML и CSS для мгновенного первого рендера.</p>
+        </article>
+        <article class="card">
+          <h3>Адаптивный дизайн</h3>
+          <p>Комфортный просмотр на телефонах, планшетах и десктопах без отдельной мобильной версии.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container about__layout">
+      <div class="about__content">
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">Делаем аккуратные сайты для реальных задач</h2>
+        <p class="about__text">
+          Этот шаблон помогает быстро запустить современную страницу с выразительным первым экраном
+          и продуманными секциями. Он легко дорабатывается под продукт, портфолио или сервис.
+        </p>
+      </div>
+      <div class="about__media">
+        <img src="about-image.svg" alt="Иллюстрация процесса создания сайта">
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container contact__box">
+      <p class="section__eyebrow">Contact</p>
+      <h2 class="section__title">Оставьте заявку</h2>
+      <form class="contact__form" action="#" method="post">
+        <label class="contact__field">
+          <span>Имя</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="contact__field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <button class="hero__button contact__button" type="submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
