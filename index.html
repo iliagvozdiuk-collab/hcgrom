@@ -6,6 +6,20 @@
   <title>Мой лендинг</title>
   <meta name="description" content="Одностраничный сайт с hero-секцией и кнопкой.">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    const TG_USERNAME = "YoGoFr";
+    const TG_TEXT = `🏒 Привет! Хочу записаться на тренировку Hockey Engine в Москве.
+Арена: ЛСК «Молодежка».
+Мой уровень: [новичок/любитель/уверенный]
+Удобные дни/время: […]`;
+    const TG_LINK = `https://t.me/${TG_USERNAME}?text=${encodeURIComponent(TG_TEXT)}`;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-telegram]").forEach((link) => {
+        link.href = TG_LINK;
+      });
+    });
+  </script>
 </head>
 <body>
   <header class="header">
@@ -19,7 +33,7 @@
         <a class="nav__link" href="#faq">FAQ</a>
       </nav>
 
-      <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">
+      <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">
         Написать тренеру
       </a>
     </div>
@@ -42,7 +56,7 @@
           </ul>
 
           <div class="hero__actions">
-            <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">
               Написать тренеру в Telegram
             </a>
             <a class="btn btn--ghost" href="#schedule">Смотреть расписание</a>
@@ -98,7 +112,7 @@
 
         <div class="cta">
           <p class="cta__text">Хочешь попасть на тренировку? Напиши главному тренеру.</p>
-          <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">Написать</a>
+          <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">Написать</a>
         </div>
       </div>
     </section>
@@ -157,7 +171,7 @@
 
         <div class="cta">
           <p class="cta__text">Хочешь уточнить ближайшую тренировку и стоимость?</p>
-          <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">Написать</a>
+          <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">Написать</a>
         </div>
       </div>
     </section>
@@ -205,7 +219,7 @@
 
         <div class="cta">
           <p class="cta__text">Готов присоединиться? Напиши тренеру — ответим быстро.</p>
-          <a class="btn btn--primary" href="TELEGRAM_LINK" target="_blank" rel="noopener noreferrer">Написать</a>
+          <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">Написать</a>
         </div>
       </div>
     </section>
