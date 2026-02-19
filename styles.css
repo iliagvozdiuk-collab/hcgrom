@@ -446,6 +446,48 @@ button:focus-visible,
   background: linear-gradient(180deg, rgba(25, 31, 46, 0.9), rgba(15, 20, 31, 0.9));
 }
 
+.arena-map {
+  margin-top: 16px;
+}
+
+.arena-map__icons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.map-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.map-icon--yandex {
+  background: #ffcc00;
+  color: #000;
+}
+
+.map-icon--2gis {
+  background: #1ec500;
+  color: #fff;
+}
+
+.map-icon:hover {
+  transform: scale(1.08);
+}
+
+.arena-route {
+  width: 100%;
+  max-width: 260px;
+}
+
 .list {
   margin: 0.75rem 0 0;
   padding-left: 1rem;
