@@ -289,6 +289,49 @@ button:focus-visible,
   max-width: 68ch;
 }
 
+.section--highlight .container {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding-top: clamp(1.1rem, 2.2vw, 1.6rem);
+  padding-bottom: clamp(1.1rem, 2.2vw, 1.6rem);
+  background: linear-gradient(160deg, rgba(18, 24, 36, 0.94), rgba(11, 15, 24, 0.94));
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+
+.about__text {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.about__list {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.about__list li {
+  position: relative;
+  padding: 0.65rem 0.75rem 0.65rem 0.95rem;
+  border-left: 2px solid rgba(214, 31, 46, 0.75);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.about__list li::before {
+  content: none;
+}
+
+.about__list li:hover {
+  background: rgba(214, 31, 46, 0.08);
+  border-left-color: var(--accentHover);
+}
+
 .grid {
   margin-top: 1.35rem;
   display: grid;
@@ -304,7 +347,7 @@ button:focus-visible,
 }
 
 .grid--schedule {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid--gallery {
@@ -372,6 +415,35 @@ button:focus-visible,
   margin: 0.5rem 0 0;
   font-size: 1.04rem;
   font-weight: 600;
+}
+
+.schedule-list {
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.52rem;
+  color: var(--muted);
+}
+
+.schedule-list li {
+  position: relative;
+  padding-left: 1.05rem;
+}
+
+.schedule-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.schedule-price {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(25, 31, 46, 0.9), rgba(15, 20, 31, 0.9));
 }
 
 .list {
@@ -549,6 +621,10 @@ button:focus-visible,
 @media (max-width: 600px) {
   .container {
     padding: 0 0.9rem;
+  }
+
+  .about__list {
+    grid-template-columns: 1fr;
   }
 
   .header__inner {
