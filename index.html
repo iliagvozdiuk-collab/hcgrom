@@ -57,6 +57,7 @@
         <div class="hero__content">
           <img class="hero__logo" src="assets/logo.png" alt="ХК «Гром» — логотип" decoding="async" />
           <h1 class="hero__title">ХК «Гром»</h1>
+          <p class="hero__slogan">И грянул <span>ГРОМ!</span></p>
           <p class="hero__subtitle">
             Любительская хоккейная команда в Москве. Тренировки для взрослых: катание, техника, игровые упражнения.
           </p>
@@ -68,7 +69,7 @@
               </svg>
               Написать тренеру в Telegram
             </a>
-            <a class="btn btn--ghost" data-telegram-bot href="https://t.me/hcgrom_bot" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn--bot" data-telegram-bot href="https://t.me/hcgrom_bot" target="_blank" rel="noopener noreferrer">
               <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                 <path fill="currentColor" d="M9.04 15.36l-.38 5.35c.54 0 .77-.23 1.04-.51l2.5-2.39 5.18 3.79c.95.52 1.63.25 1.87-.88l3.39-15.9h.01c.29-1.35-.49-1.88-1.41-1.53L1.44 9.59C.14 10.1.16 10.82 1.22 11.15l4.9 1.53 11.38-7.17c.53-.32 1.02-.14.62.18"/>
               </svg>
@@ -174,6 +175,80 @@
       </div>
     </section>
 
+    <!-- TRAINING FORMAT -->
+    <section class="section" aria-label="Как проходят тренировки">
+      <div class="container">
+        <h2 class="section__title">Как проходят тренировки</h2>
+        <div class="grid grid--features">
+          <div class="feature">
+            <h3 class="feature__title">Разминка</h3>
+            <p class="feature__text">Подготовка к нагрузке, базовые движения и координация.</p>
+          </div>
+          <div class="feature">
+            <h3 class="feature__title">Катание</h3>
+            <p class="feature__text">Баланс, торможения, ускорения, повороты и стартовые движения.</p>
+          </div>
+          <div class="feature">
+            <h3 class="feature__title">Техника</h3>
+            <p class="feature__text">Ведение, передачи, прием, бросок — с разбором ошибок.</p>
+          </div>
+          <div class="feature">
+            <h3 class="feature__title">Игровая часть</h3>
+            <p class="feature__text">Ситуационные упражнения и мини-матчи под задачи.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section" id="schedule" aria-label="Расписание тренировок">
+      <div class="container">
+        <h2 class="section__title">Расписание тренировок</h2>
+
+        <div class="grid grid--schedule">
+          <article class="schedule-card">
+            <h3 class="schedule-card__title">Понедельник</h3>
+            <p class="schedule-card__sub">СпортТехАрена</p>
+            <p class="schedule-card__text"><strong>22:15–23:45</strong></p>
+            <p class="schedule-card__sub">(Группа 3 – Группа 4)</p>
+          </article>
+
+          <article class="schedule-card">
+            <h3 class="schedule-card__title">Вторник</h3>
+            <p class="schedule-card__sub">Митино Айс Арена</p>
+            <p class="schedule-card__text"><strong>20:30–21:30</strong> — ОФП</p>
+            <p class="schedule-card__text"><strong>22:00–23:30</strong> — Общая</p>
+          </article>
+
+          <article class="schedule-card">
+            <h3 class="schedule-card__title">Среда</h3>
+            <p class="schedule-card__sub">СпортТехАрена</p>
+            <p class="schedule-card__text"><strong>23:45–00:00</strong> — Индивидуальное мастерство</p>
+          </article>
+
+          <article class="schedule-card">
+            <h3 class="schedule-card__title">Пятница</h3>
+            <p class="schedule-card__sub">СпортТехАрена</p>
+            <p class="schedule-card__text"><strong>21:45–23:15</strong></p>
+            <p class="schedule-card__sub">(Группа 1 – Группа 2)</p>
+          </article>
+        </div>
+
+        <div class="schedule-cta">
+          <a class="btn btn--bot"
+             data-telegram-bot
+             href="https://t.me/hcgrom_bot"
+             target="_blank"
+             rel="noopener noreferrer">
+             <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+               <path fill="currentColor" d="M9.04 15.36l-.38 5.35c.54 0 .77-.23 1.04-.51l2.5-2.39 5.18 3.79c.95.52 1.63.25 1.87-.88l3.39-15.9h.01c.29-1.35-.49-1.88-1.41-1.53L1.44 9.59C.14 10.1.16 10.82 1.22 11.15l4.9 1.53 11.38-7.17c.53-.32 1.02-.14.62.18"/>
+             </svg>
+             Записаться через бота
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="arenas" class="section" aria-label="Арены">
       <div class="container">
         <h2 class="section__title">Арены</h2>
@@ -242,67 +317,6 @@
                  Построить маршрут
               </a>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRAINING FORMAT -->
-    <section class="section" aria-label="Как проходят тренировки">
-      <div class="container">
-        <h2 class="section__title">Как проходят тренировки</h2>
-        <div class="grid grid--features">
-          <div class="feature">
-            <h3 class="feature__title">Разминка</h3>
-            <p class="feature__text">Подготовка к нагрузке, базовые движения и координация.</p>
-          </div>
-          <div class="feature">
-            <h3 class="feature__title">Катание</h3>
-            <p class="feature__text">Баланс, торможения, ускорения, повороты и стартовые движения.</p>
-          </div>
-          <div class="feature">
-            <h3 class="feature__title">Техника</h3>
-            <p class="feature__text">Ведение, передачи, прием, бросок — с разбором ошибок.</p>
-          </div>
-          <div class="feature">
-            <h3 class="feature__title">Игровая часть</h3>
-            <p class="feature__text">Ситуационные упражнения и мини-матчи под задачи.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCHEDULE -->
-    <section class="section" id="schedule" aria-label="Расписание тренировок">
-      <div class="container">
-        <h2 class="section__title">Расписание тренировок</h2>
-
-        <div class="grid grid--schedule">
-          <article class="schedule-card">
-            <h3 class="schedule-card__title">Понедельник</h3>
-            <p class="schedule-card__sub">СпортТехАрена</p>
-            <p class="schedule-card__text"><strong>22:15–23:45</strong></p>
-            <p class="schedule-card__sub">(Группа 3 – Группа 4)</p>
-          </article>
-
-          <article class="schedule-card">
-            <h3 class="schedule-card__title">Вторник</h3>
-            <p class="schedule-card__sub">Митино Айс Арена</p>
-            <p class="schedule-card__text"><strong>20:30–21:30</strong> — ОФП</p>
-            <p class="schedule-card__text"><strong>22:00–23:30</strong> — Общая</p>
-          </article>
-
-          <article class="schedule-card">
-            <h3 class="schedule-card__title">Среда</h3>
-            <p class="schedule-card__sub">СпортТехАрена</p>
-            <p class="schedule-card__text"><strong>23:45–00:00</strong> — Индивидуальное мастерство</p>
-          </article>
-
-          <article class="schedule-card">
-            <h3 class="schedule-card__title">Пятница</h3>
-            <p class="schedule-card__sub">СпортТехАрена</p>
-            <p class="schedule-card__text"><strong>21:45–23:15</strong></p>
-            <p class="schedule-card__sub">(Группа 1 – Группа 2)</p>
           </article>
         </div>
       </div>
