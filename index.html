@@ -72,14 +72,19 @@
                  target="_blank" rel="noopener noreferrer"
                  class="map-icon map-icon--yandex"
                  aria-label="Открыть в Яндекс Картах">
-                 Y
+                 <svg viewBox="0 0 24 24" class="map-icon__svg" aria-hidden="true">
+                   <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.25 6 12 6 12s6-7.75 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5z"/>
+                 </svg>
               </a>
 
               <a href="https://2gis.ru/search/СпортТехАрена%20ул.%20Вилиса%20Лациса%2026"
                  target="_blank" rel="noopener noreferrer"
                  class="map-icon map-icon--2gis"
                  aria-label="Открыть в 2ГИС">
-                 2G
+                 <svg viewBox="0 0 24 24" class="map-icon__svg" aria-hidden="true">
+                   <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                   <circle cx="12" cy="12" r="5" fill="white"/>
+                 </svg>
               </a>
             </div>
 
@@ -228,54 +233,34 @@
     <section class="section" id="schedule" aria-label="Расписание тренировок">
       <div class="container">
         <h2 class="section__title">Расписание тренировок</h2>
-        <p class="section__lead">Сезон лиги «Трудовые резервы»</p>
-        <p class="section__lead"><strong>Арена:</strong> СпортТехАрена • <strong>Адрес:</strong> ул. Вилиса Лациса, д.26</p>
-        <div class="arena-map">
-          <div class="arena-map__icons">
-            <a href="https://yandex.ru/maps/?text=СпортТехАрена%20ул.%20Вилиса%20Лациса%2C%2026"
-               target="_blank" rel="noopener noreferrer"
-               class="map-icon map-icon--yandex"
-               aria-label="Открыть в Яндекс Картах">
-               Y
-            </a>
-
-            <a href="https://2gis.ru/search/СпортТехАрена%20ул.%20Вилиса%20Лациса%2026"
-               target="_blank" rel="noopener noreferrer"
-               class="map-icon map-icon--2gis"
-               aria-label="Открыть в 2ГИС">
-               2G
-            </a>
-          </div>
-
-          <a class="btn btn--primary arena-route"
-             href="https://yandex.ru/maps/?rtext=~СпортТехАрена%20ул.%20Вилиса%20Лациса%2C%2026"
-             target="_blank" rel="noopener noreferrer">
-             Построить маршрут
-          </a>
-        </div>
 
         <div class="grid grid--schedule">
           <article class="schedule-card">
-            <h3 class="schedule-card__title">Первый и второй составы</h3>
-            <ul class="schedule-list">
-              <li><strong>Вторник — 22:00</strong>, СпортТехАрена + ОФП</li>
-              <li><strong>Среда — 22:45</strong>, СпортТехАрена</li>
-              <li><strong>Пятница — 21:45</strong>, Митино Айс</li>
-            </ul>
+            <h3 class="schedule-card__title">Понедельник</h3>
+            <p class="schedule-card__sub">СпортТехАрена</p>
+            <p class="schedule-card__text"><strong>22:15–23:45</strong></p>
+            <p class="schedule-card__sub">(Группа 3 – Группа 4)</p>
           </article>
 
           <article class="schedule-card">
-            <h3 class="schedule-card__title">Третий и четвертый составы</h3>
-            <ul class="schedule-list">
-              <li><strong>Понедельник — 22:15</strong>, СпортТехАрена</li>
-              <li><strong>Среда — 22:45</strong>, СпортТехАрена</li>
-              <li><strong>Вторник — 22:00</strong>, Митино Айс + ОФП</li>
-            </ul>
+            <h3 class="schedule-card__title">Вторник</h3>
+            <p class="schedule-card__sub">Митино</p>
+            <p class="schedule-card__text"><strong>20:30–21:30</strong> — ОФП</p>
+            <p class="schedule-card__text"><strong>22:00–23:30</strong> — Общая</p>
           </article>
-        </div>
 
-        <div class="schedule-price">
-          <strong>Стоимость пробного занятия — 950 ₽</strong>
+          <article class="schedule-card">
+            <h3 class="schedule-card__title">Среда</h3>
+            <p class="schedule-card__sub">СпортТехАрена</p>
+            <p class="schedule-card__text"><strong>23:45–00:00</strong> — Индивидуальное мастерство</p>
+          </article>
+
+          <article class="schedule-card">
+            <h3 class="schedule-card__title">Пятница</h3>
+            <p class="schedule-card__sub">СпортТехАрена</p>
+            <p class="schedule-card__text"><strong>21:45–23:15</strong></p>
+            <p class="schedule-card__sub">(Группа 1 – Группа 2)</p>
+          </article>
         </div>
       </div>
     </section>

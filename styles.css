@@ -457,16 +457,18 @@ button:focus-visible,
 }
 
 .map-icon {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
   transition: 0.25s ease;
+}
+
+.map-icon__svg {
+  width: 22px;
+  height: 22px;
 }
 
 .map-icon--yandex {
@@ -481,6 +483,7 @@ button:focus-visible,
 
 .map-icon:hover {
   transform: scale(1.08);
+  box-shadow: 0 0 14px rgba(255,255,255,0.15);
 }
 
 .arena-route {
