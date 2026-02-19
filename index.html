@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой лендинг</title>
+  <title>ХК «Гром»</title>
   <meta name="description" content="Одностраничный сайт с hero-секцией и кнопкой.">
   <link rel="stylesheet" href="styles.css">
   <script>
-    const TG_USERNAME = "YoGoFr";
-    const TG_TEXT = `🏒 Привет! Хочу записаться на тренировку Hockey Engine в Москве.
+    const TG_USERNAME = "hcgrom";
+    const TG_TEXT = `🏒 Привет! Хочу записаться на тренировку ХК «Гром» в Москве.
 Арена: ЛСК «Молодежка».
 Мой уровень: [новичок/любитель/уверенный]
 Удобные дни/время: […]`;
@@ -24,7 +24,7 @@
 <body>
   <header class="header">
     <div class="container header__inner">
-      <a class="logo" href="#top" aria-label="Hockey Engine — на главную">Hockey Engine</a>
+      <a class="logo" href="#top" aria-label="ХК «Гром» — на главную">ХК «Гром»</a>
 
       <nav class="nav" aria-label="Навигация">
         <a class="nav__link" href="#coaches">Тренеры</a>
@@ -33,7 +33,10 @@
         <a class="nav__link" href="#faq">FAQ</a>
       </nav>
 
-      <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">
+      <a class="btn btn--primary" data-telegram href="https://t.me/hcgrom" target="_blank" rel="noopener noreferrer">
+        <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M9.04 15.36l-.38 5.35c.54 0 .77-.23 1.04-.51l2.5-2.39 5.18 3.79c.95.52 1.63.25 1.87-.88l3.39-15.9h.01c.29-1.35-.49-1.88-1.41-1.53L1.44 9.59C.14 10.1.16 10.82 1.22 11.15l4.9 1.53 11.38-7.17c.53-.32 1.02-.14.62.18"/>
+        </svg>
         Написать тренеру
       </a>
     </div>
@@ -41,10 +44,12 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero" aria-label="Hockey Engine — витрина команды">
+    <section class="hero" aria-label="ХК «Гром» — витрина команды">
+      <div class="hero__storm" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <h1 class="hero__title">Hockey Engine</h1>
+          <img class="hero__logo" src="assets/logo.png" alt="ХК «Гром» — логотип" decoding="async" />
+          <h1 class="hero__title">ХК «Гром»</h1>
           <p class="hero__subtitle">
             Любительская хоккейная команда в Москве. Тренировки для взрослых: катание, техника, игровые упражнения.
           </p>
@@ -56,7 +61,10 @@
           </ul>
 
           <div class="hero__actions">
-            <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn--primary" data-telegram href="https://t.me/hcgrom" target="_blank" rel="noopener noreferrer">
+              <svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path fill="currentColor" d="M9.04 15.36l-.38 5.35c.54 0 .77-.23 1.04-.51l2.5-2.39 5.18 3.79c.95.52 1.63.25 1.87-.88l3.39-15.9h.01c.29-1.35-.49-1.88-1.41-1.53L1.44 9.59C.14 10.1.16 10.82 1.22 11.15l4.9 1.53 11.38-7.17c.53-.32 1.02-.14.62.18"/>
+              </svg>
               Написать тренеру в Telegram
             </a>
             <a class="btn btn--ghost" href="#schedule">Смотреть расписание</a>
@@ -65,7 +73,7 @@
 
         <div class="hero__media" aria-label="Фото с тренировок (заглушка)">
           <!-- Можно заменить на реальное фото -->
-          <div class="placeholder placeholder--hero">Фото команды / тренировки</div>
+          <img class="hero__img" src="assets/training/01.jpg" alt="Тренировка ХК «Гром» на льду" loading="eager" decoding="async">
         </div>
       </div>
     </section>
@@ -81,30 +89,45 @@
         <div class="grid grid--cards">
           <article class="card">
             <div class="card__media">
-              <div class="placeholder">Фото Егора</div>
+              <img class="card__img" src="assets/coaches/head.jpeg" alt="Главный тренер" loading="lazy" decoding="async">
             </div>
             <div class="card__body">
-              <h3 class="card__title">Егор</h3>
-              <p class="card__text">Главный тренер. Фокус на катании, технике и системной прогрессии.</p>
+              <h3 class="card__title">Главный тренер</h3>
+              <p class="card__text">Координирует тренировочный процесс и отвечает за общую прогрессию команды.</p>
               <ul class="list">
-                <li>Постановка базы и исправление ошибок</li>
-                <li>Техника: передачи, контроль шайбы, бросок</li>
-                <li>Понятные задания и обратная связь</li>
+                <li>Постановка базы и контроль техники</li>
+                <li>План тренировочного цикла</li>
+                <li>Обратная связь по прогрессу игроков</li>
               </ul>
             </div>
           </article>
 
           <article class="card">
             <div class="card__media">
-              <div class="placeholder">Фото Димы</div>
+              <img class="card__img" src="assets/coaches/skating.jpeg" alt="Тренер по катанию" loading="lazy" decoding="async">
             </div>
             <div class="card__body">
-              <h3 class="card__title">Дима</h3>
-              <p class="card__text">Тренер. Фокус на игровых упражнениях, взаимодействиях и скорости решений.</p>
+              <h3 class="card__title">Тренер по катанию</h3>
+              <p class="card__text">Развивает баланс, ускорения, торможения и устойчивую технику движения.</p>
               <ul class="list">
-                <li>Игровые упражнения и мини-матчи</li>
-                <li>Позиционная игра и взаимопонимание</li>
-                <li>Темп и интенсивность</li>
+                <li>Техника катания и маневренность</li>
+                <li>Стартовая скорость и смена темпа</li>
+                <li>Работа над ошибками в движении</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img class="card__img" src="assets/coaches/keeper.jpeg" alt="Тренер вратарей" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Тренер вратарей</h3>
+              <p class="card__text">Специализированные занятия для голкиперов любого уровня подготовки.</p>
+              <ul class="list">
+                <li>Позиция и чтение эпизода</li>
+                <li>Реакция, перемещения, координация</li>
+                <li>Индивидуальные упражнения по роли</li>
               </ul>
             </div>
           </article>
@@ -112,7 +135,7 @@
 
         <div class="cta">
           <p class="cta__text">Хочешь попасть на тренировку? Напиши главному тренеру.</p>
-          <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">Написать</a>
+          <a class="btn btn--primary" data-telegram href="https://t.me/hcgrom" target="_blank" rel="noopener noreferrer"><svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9.04 15.36l-.38 5.35c.54 0 .77-.23 1.04-.51l2.5-2.39 5.18 3.79c.95.52 1.63.25 1.87-.88l3.39-15.9h.01c.29-1.35-.49-1.88-1.41-1.53L1.44 9.59C.14 10.1.16 10.82 1.22 11.15l4.9 1.53 11.38-7.17c.53-.32 1.02-.14.62.18"/></svg>Написать</a>
         </div>
       </div>
     </section>
@@ -151,27 +174,15 @@
         </p>
 
         <!-- Пока заглушка — потом заменим на реальные дни/время -->
-        <div class="grid grid--schedule">
           <div class="schedule-card">
-            <h3 class="schedule-card__title">Вторник</h3>
-            <p class="schedule-card__text">20:30 — 22:00</p>
-            <p class="schedule-card__sub">Уровень: любой (по группам)</p>
-          </div>
-          <div class="schedule-card">
-            <h3 class="schedule-card__title">Четверг</h3>
-            <p class="schedule-card__text">21:00 — 22:30</p>
+            <h3 class="schedule-card__title">Среда</h3>
+            <p class="schedule-card__text">22:00 — 23:00</p>
             <p class="schedule-card__sub">Уровень: любители</p>
           </div>
-          <div class="schedule-card">
-            <h3 class="schedule-card__title">Суббота</h3>
-            <p class="schedule-card__text">10:00 — 11:30</p>
-            <p class="schedule-card__sub">Уровень: смешанный</p>
-          </div>
-        </div>
 
         <div class="cta">
           <p class="cta__text">Хочешь уточнить ближайшую тренировку и стоимость?</p>
-          <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">Написать</a>
+          <a class="btn btn--primary" data-telegram href="https://t.me/hcgrom" target="_blank" rel="noopener noreferrer"><svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9.04 15.36l-.38 5.35c.54 0 .77-.23 1.04-.51l2.5-2.39 5.18 3.79c.95.52 1.63.25 1.87-.88l3.39-15.9h.01c.29-1.35-.49-1.88-1.41-1.53L1.44 9.59C.14 10.1.16 10.82 1.22 11.15l4.9 1.53 11.38-7.17c.53-.32 1.02-.14.62.18"/></svg>Написать</a>
         </div>
       </div>
     </section>
@@ -180,15 +191,15 @@
     <section class="section" id="gallery" aria-label="Фото с тренировок">
       <div class="container">
         <h2 class="section__title">Фото с тренировок</h2>
-        <p class="section__lead">Живые моменты со льда. Добавим реальные фото — будет ещё круче.</p>
+        <p class="section__lead">Живые моменты со льда</p>
 
         <div class="grid grid--gallery">
-          <div class="gallery-item"><div class="placeholder">Фото 1</div></div>
-          <div class="gallery-item"><div class="placeholder">Фото 2</div></div>
-          <div class="gallery-item"><div class="placeholder">Фото 3</div></div>
-          <div class="gallery-item"><div class="placeholder">Фото 4</div></div>
-          <div class="gallery-item"><div class="placeholder">Фото 5</div></div>
-          <div class="gallery-item"><div class="placeholder">Фото 6</div></div>
+          <div class="gallery-item"><img class="gallery__img" src="assets/training/01.jpg" alt="ХК «Гром» — тренировка, фото 1" loading="lazy" decoding="async"></div>
+          <div class="gallery-item"><img class="gallery__img" src="assets/training/02.jpg" alt="ХК «Гром» — тренировка, фото 2" loading="lazy" decoding="async"></div>
+          <div class="gallery-item"><img class="gallery__img" src="assets/training/03.jpg" alt="ХК «Гром» — тренировка, фото 3" loading="lazy" decoding="async"></div>
+          <div class="gallery-item"><img class="gallery__img" src="assets/training/04.jpg" alt="ХК «Гром» — тренировка, фото 4" loading="lazy" decoding="async"></div>
+          <div class="gallery-item"><img class="gallery__img" src="assets/training/05.jpg" alt="ХК «Гром» — тренировка, фото 5" loading="lazy" decoding="async"></div>
+          <div class="gallery-item"><img class="gallery__img" src="assets/training/06.jpg" alt="ХК «Гром» — тренировка, фото 6" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
@@ -219,7 +230,7 @@
 
         <div class="cta">
           <p class="cta__text">Готов присоединиться? Напиши тренеру — ответим быстро.</p>
-          <a class="btn btn--primary" data-telegram href="https://t.me/YoGoFr" target="_blank" rel="noopener noreferrer">Написать</a>
+          <a class="btn btn--primary" data-telegram href="https://t.me/hcgrom" target="_blank" rel="noopener noreferrer"><svg class="btn__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9.04 15.36l-.38 5.35c.54 0 .77-.23 1.04-.51l2.5-2.39 5.18 3.79c.95.52 1.63.25 1.87-.88l3.39-15.9h.01c.29-1.35-.49-1.88-1.41-1.53L1.44 9.59C.14 10.1.16 10.82 1.22 11.15l4.9 1.53 11.38-7.17c.53-.32 1.02-.14.62.18"/></svg>Написать</a>
         </div>
       </div>
     </section>
@@ -228,7 +239,7 @@
   <footer class="footer" aria-label="Подвал сайта">
     <div class="container footer__inner">
       <div>
-        <strong>Hockey Engine</strong>
+        <strong>ХК «Гром»</strong>
         <div class="muted">Москва • ЛСК «Молодежка»</div>
       </div>
       <div class="muted">
