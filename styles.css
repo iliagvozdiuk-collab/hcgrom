@@ -491,6 +491,17 @@ button:focus-visible,
   max-width: 260px;
 }
 
+.arenas-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.arena-card {
+  padding: 1rem;
+}
+
 .list {
   margin: 0.75rem 0 0;
   padding-left: 1rem;
@@ -666,6 +677,10 @@ button:focus-visible,
 @media (max-width: 600px) {
   .container {
     padding: 0 0.9rem;
+  }
+
+  .arenas-grid {
+    grid-template-columns: 1fr;
   }
 
   .about__list {
