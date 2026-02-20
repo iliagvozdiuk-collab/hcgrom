@@ -85,6 +85,86 @@
         });
       }
 
+      const gallery = document.querySelector(".gallery");
+      const galleryTrack = gallery ? gallery.querySelector(".gallery__track") : null;
+      const gallerySlides = galleryTrack ? Array.from(galleryTrack.querySelectorAll(".gallery__slide")) : [];
+      const prevBtn = gallery ? gallery.querySelector(".gallery__btn--prev") : null;
+      const nextBtn = gallery ? gallery.querySelector(".gallery__btn--next") : null;
+
+      if (gallery && galleryTrack && gallerySlides.length) {
+        let currentIndex = 0;
+        let autoplayId = null;
+        let touchStartX = null;
+
+        const updateSlider = () => {
+          galleryTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+
+        const goNext = () => {
+          currentIndex = (currentIndex + 1) % gallerySlides.length;
+          updateSlider();
+        };
+
+        const goPrev = () => {
+          currentIndex = (currentIndex - 1 + gallerySlides.length) % gallerySlides.length;
+          updateSlider();
+        };
+
+        const startAutoplay = () => {
+          if (autoplayId) {
+            return;
+          }
+          autoplayId = window.setInterval(goNext, 3000);
+        };
+
+        const stopAutoplay = () => {
+          if (!autoplayId) {
+            return;
+          }
+          window.clearInterval(autoplayId);
+          autoplayId = null;
+        };
+
+        if (nextBtn) {
+          nextBtn.addEventListener("click", goNext);
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", goPrev);
+        }
+
+        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+          gallery.addEventListener("mouseenter", stopAutoplay);
+          gallery.addEventListener("mouseleave", startAutoplay);
+        }
+
+        gallery.addEventListener("touchstart", (event) => {
+          touchStartX = event.changedTouches[0].clientX;
+        }, { passive: true });
+
+        gallery.addEventListener("touchend", (event) => {
+          if (touchStartX === null) {
+            return;
+          }
+
+          const touchEndX = event.changedTouches[0].clientX;
+          const diffX = touchEndX - touchStartX;
+
+          if (Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+              goPrev();
+            } else {
+              goNext();
+            }
+          }
+
+          touchStartX = null;
+        }, { passive: true });
+
+        updateSlider();
+        startAutoplay();
+      }
+
       const scheduleSection = document.querySelector("#schedule");
       if (!scheduleSection) {
         return;
@@ -456,18 +536,23 @@
         <h2 class="section__title">Фото с тренировок</h2>
         <p class="section__lead">Живые моменты со льда</p>
 
-        <div class="grid grid--gallery">
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/01.jpg" alt="ХК «Гром» — тренировка, фото 1" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/02.jpg" alt="ХК «Гром» — тренировка, фото 2" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/03.jpg" alt="ХК «Гром» — тренировка, фото 3" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/04.jpg" alt="ХК «Гром» — тренировка, фото 4" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/05.jpg" alt="ХК «Гром» — тренировка, фото 5" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/06.jpg" alt="ХК «Гром» — тренировка, фото 6" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/07.jpg" alt="ХК «Гром» — тренировка, фото 7" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/08.jpg" alt="ХК «Гром» — тренировка, фото 8" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/09.jpg" alt="ХК «Гром» — тренировка, фото 9" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/10.jpg" alt="ХК «Гром» — тренировка, фото 10" loading="lazy" decoding="async"></div>
-          <div class="gallery-item"><img class="gallery__img" src="assets/training/11.jpg" alt="ХК «Гром» — тренировка, фото 11" loading="lazy" decoding="async"></div>
+        <div class="gallery">
+          <div class="gallery__track">
+            <img class="gallery__img gallery__slide" src="assets/training/01.jpg" alt="ХК «Гром» — тренировка, фото 1" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/02.jpg" alt="ХК «Гром» — тренировка, фото 2" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/03.jpg" alt="ХК «Гром» — тренировка, фото 3" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/04.jpg" alt="ХК «Гром» — тренировка, фото 4" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/05.jpg" alt="ХК «Гром» — тренировка, фото 5" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/06.jpg" alt="ХК «Гром» — тренировка, фото 6" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/07.jpg" alt="ХК «Гром» — тренировка, фото 7" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/08.jpg" alt="ХК «Гром» — тренировка, фото 8" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/09.jpg" alt="ХК «Гром» — тренировка, фото 9" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/10.jpg" alt="ХК «Гром» — тренировка, фото 10" loading="lazy" decoding="async">
+            <img class="gallery__img gallery__slide" src="assets/training/11.jpg" alt="ХК «Гром» — тренировка, фото 11" loading="lazy" decoding="async">
+          </div>
+
+          <button class="gallery__btn gallery__btn--prev" aria-label="Предыдущее фото">‹</button>
+          <button class="gallery__btn gallery__btn--next" aria-label="Следующее фото">›</button>
         </div>
       </div>
     </section>
