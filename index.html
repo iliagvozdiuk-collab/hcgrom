@@ -410,6 +410,17 @@
       });
     });
   </script>
+  <script>
+    // Отключаем восстановление позиции скролла браузером
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Принудительно прокручиваем страницу вверх при загрузке
+    window.addEventListener('load', () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
 </body>
 
 </html>
