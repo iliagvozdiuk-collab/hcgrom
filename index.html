@@ -38,6 +38,53 @@
         link.href = TG_BOT_LINK;
       });
 
+      const heroImage = document.querySelector(".hero-image");
+      const lightbox = document.querySelector("#lightbox");
+      const lightboxImage = lightbox ? lightbox.querySelector(".lightbox__img") : null;
+      const lightboxOverlay = lightbox ? lightbox.querySelector(".lightbox__overlay") : null;
+      const lightboxClose = lightbox ? lightbox.querySelector(".lightbox__close") : null;
+
+      const openLightbox = () => {
+        if (!heroImage || !lightbox || !lightboxImage) {
+          return;
+        }
+
+        lightboxImage.src = heroImage.src;
+        lightboxImage.alt = heroImage.alt || "";
+        document.body.style.overflow = "hidden";
+        document.body.classList.add("is-lightbox-open");
+        lightbox.hidden = false;
+      };
+
+      const closeLightbox = () => {
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+
+        document.body.style.overflow = "";
+        document.body.classList.remove("is-lightbox-open");
+        lightbox.hidden = true;
+        lightboxImage.src = "";
+      };
+
+      if (heroImage && lightbox && lightboxImage) {
+        heroImage.addEventListener("click", openLightbox);
+
+        if (lightboxOverlay) {
+          lightboxOverlay.addEventListener("click", closeLightbox);
+        }
+
+        if (lightboxClose) {
+          lightboxClose.addEventListener("click", closeLightbox);
+        }
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) {
+            closeLightbox();
+          }
+        });
+      }
+
       const scheduleSection = document.querySelector("#schedule");
       if (!scheduleSection) {
         return;
@@ -169,7 +216,9 @@
           </div>
 
           <div class="hero__image-block">
-            <img src="assets/training/01.jpg" alt="Тренировка ХК Гром" class="hero__image">
+            <div class="hero-image-wrapper">
+              <img src="assets/hero/01.jpg" alt="Тренировка ХК Гром" class="hero__image hero-image">
+            </div>
           </div>
         </div>
 
@@ -193,7 +242,8 @@
               <img class="card__img" src="assets/coaches/nikiforov_denis.jpeg" alt="Главный тренер ХК «Гром»" loading="lazy" decoding="async">
             </div>
             <div class="card__body">
-              <h3 class="card__title">Главный тренер - Денис Никифиров</h3>
+              <span class="coach-role coach-role--head">Главный тренер</span>
+              <h3 class="card__title">Денис Никифиров</h3>
               <p class="card__text">Координирует тренировочный процесс и отвечает за общую прогрессию команды.</p>
               <ul class="list">
                 <li>Постановка базы и контроль техники</li>
@@ -208,12 +258,13 @@
               <img class="card__img" src="assets/coaches/vershkov_dmitrii.jpeg" alt="Старший тренер ХК «Гром»" loading="lazy" decoding="async">
             </div>
             <div class="card__body">
-              <h3 class="card__title">Старший тренер - Дмитрий Вершков</h3>
-              <p class="card__text">Развивает баланс, ускорения, торможения и устойчивую технику движения.</p>
+              <span class="coach-role coach-role--senior">Старший тренер</span>
+              <h3 class="card__title">Дмитрий Вершков</h3>
+              <p class="card__text">Отвечает за организацию тренировочного процесса и развитие игроков, обеспечивая системную работу</p>
               <ul class="list">
-                <li>Техника катания и маневренность</li>
-                <li>Стартовая скорость и смена темпа</li>
-                <li>Работа над ошибками в движении</li>
+                <li>Контроль нагрузки и дисциплины</li>
+                <li>Помощь в улучшении техники, тактику и физической формы</li>
+                <li>Работа над ошибками в движении и ведении шайбы</li>
               </ul>
             </div>
           </article>
@@ -491,6 +542,10 @@
       window.scrollTo(0, 0);
     });
   </script>
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox__overlay"></div>
+    <img class="lightbox__img" alt="">
+  </div>
 </body>
 
 </html>
