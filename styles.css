@@ -531,7 +531,8 @@ header::after {
 }
 
 .grid--schedule {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  grid-template-columns: 1fr;
 }
 
 .grid--gallery {
@@ -553,7 +554,6 @@ header::after {
 
 .card:hover,
 .feature:hover,
-.schedule-card:hover,
 .gallery-item:hover,
 .faq__item:hover {
   transform: translateY(-3px);
@@ -599,6 +599,72 @@ header::after {
   margin: 0.5rem 0 0;
   font-size: 1.04rem;
   font-weight: 600;
+}
+
+.schedule-card {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.38);
+  border-color: rgba(247, 198, 0, 0.24);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.schedule-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.schedule-card__sub {
+  opacity: 0.85;
+}
+
+.schedule-card__slots {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.schedule-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.schedule-slot {
+  margin: 0;
+  padding-top: 0.45rem;
+  color: var(--muted);
+}
+
+.schedule-slot + .schedule-slot {
+  border-top: 1px solid rgba(247, 198, 0, 0.2);
+}
+
+.schedule-card.is-next {
+  border-color: rgba(247, 198, 0, 0.62);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32), 0 0 16px rgba(247, 198, 0, 0.22);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .schedule-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(247, 198, 0, 0.5);
+  }
+}
+
+@media (min-width: 900px) {
+  .grid--schedule {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .schedule-list {
@@ -892,7 +958,6 @@ header::after {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .grid--schedule,
   .grid--gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -978,7 +1043,6 @@ header::after {
 
   .grid--cards,
   .grid--features,
-  .grid--schedule,
   .grid--gallery {
     grid-template-columns: 1fr;
   }

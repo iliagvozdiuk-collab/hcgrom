@@ -37,6 +37,67 @@
       document.querySelectorAll("[data-telegram-bot]").forEach((link) => {
         link.href = TG_BOT_LINK;
       });
+
+      const scheduleSection = document.querySelector("#schedule");
+      if (!scheduleSection) {
+        return;
+      }
+
+      const cards = Array.from(scheduleSection.querySelectorAll(".schedule-card"));
+      const now = new Date();
+
+      const parsed = cards
+        .map((card) => {
+          const dowRaw = card.dataset.dow;
+          const startRaw = card.dataset.start;
+          if (!dowRaw || !startRaw) {
+            return null;
+          }
+
+          const dow = Number(dowRaw);
+          const match = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(startRaw);
+          if (!Number.isInteger(dow) || dow < 0 || dow > 6 || !match) {
+            return null;
+          }
+
+          const hours = Number(match[1]);
+          const minutes = Number(match[2]);
+
+          const next = new Date(now);
+          const diffDays = (dow - now.getDay() + 7) % 7;
+          next.setDate(now.getDate() + diffDays);
+          next.setHours(hours, minutes, 0, 0);
+          if (next <= now) {
+            next.setDate(next.getDate() + 7);
+          }
+
+          return { card, nextAt: next };
+        })
+        .filter(Boolean);
+
+      if (!parsed.length) {
+        return;
+      }
+
+      cards.forEach((card) => {
+        card.classList.remove("is-next");
+        const existingBadge = card.querySelector(".schedule-badge");
+        if (existingBadge) {
+          existingBadge.remove();
+        }
+      });
+
+      parsed.sort((a, b) => a.nextAt - b.nextAt);
+      const nextCard = parsed[0].card;
+      nextCard.classList.add("is-next");
+
+      if (!nextCard.querySelector(".schedule-badge")) {
+        const badge = document.createElement("div");
+        badge.className = "schedule-badge";
+        badge.setAttribute("aria-label", "Ближайшая тренировка");
+        badge.textContent = "Ближайшая";
+        nextCard.prepend(badge);
+      }
     });
   </script>
 </head>
@@ -234,27 +295,29 @@
         <h2 class="section__title">Расписание тренировок</h2>
 
         <div class="grid grid--schedule">
-          <article class="schedule-card">
+          <article class="schedule-card" data-dow="1" data-start="22:15" data-end="23:45">
             <h3 class="schedule-card__title">Понедельник</h3>
             <p class="schedule-card__sub">СпортТехАрена</p>
             <p class="schedule-card__text"><strong>22:15–23:45</strong></p>
             <p class="schedule-card__sub">(Группа 3 – Группа 4)</p>
           </article>
 
-          <article class="schedule-card">
+          <article class="schedule-card" data-dow="2" data-start="20:30" data-end="23:30">
             <h3 class="schedule-card__title">Вторник</h3>
             <p class="schedule-card__sub">Митино Айс Арена</p>
-            <p class="schedule-card__text"><strong>20:30–21:30</strong> — ОФП</p>
-            <p class="schedule-card__text"><strong>22:00–23:30</strong> — Общая</p>
+            <ul class="schedule-card__slots">
+              <li class="schedule-slot"><strong>20:30–21:30</strong> — ОФП</li>
+              <li class="schedule-slot"><strong>22:00–23:30</strong> — Общая</li>
+            </ul>
           </article>
 
-          <article class="schedule-card">
+          <article class="schedule-card" data-dow="3" data-start="23:45" data-end="00:00">
             <h3 class="schedule-card__title">Среда</h3>
             <p class="schedule-card__sub">СпортТехАрена</p>
             <p class="schedule-card__text"><strong>23:45–00:00</strong> — Индивидуальное мастерство</p>
           </article>
 
-          <article class="schedule-card">
+          <article class="schedule-card" data-dow="5" data-start="21:45" data-end="23:15">
             <h3 class="schedule-card__title">Пятница</h3>
             <p class="schedule-card__sub">СпортТехАрена</p>
             <p class="schedule-card__text"><strong>21:45–23:15</strong></p>
