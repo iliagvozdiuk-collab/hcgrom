@@ -110,23 +110,8 @@ button:focus-visible,
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: url("assets/training/01.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.85) 0%,
-    rgba(0,0,0,0.75) 40%,
-    rgba(0,0,0,0.4) 100%
-  );
-  z-index: 0;
+  background-image: none;
+  background: var(--bg);
 }
 
 .hero > * {
@@ -330,6 +315,21 @@ button:focus-visible,
 .hero__actions .btn {
   min-height: 52px;
   padding: 14px 18px;
+}
+
+.hero__image-block {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  height: auto;
+  display: block;
 }
 
 .hero__media {
@@ -863,6 +863,10 @@ button:focus-visible,
   .hero__actions .btn {
     width: 100%;
     max-width: 360px;
+  }
+
+  .hero__image-block {
+    margin-top: 24px;
   }
 
   .hero__content {
