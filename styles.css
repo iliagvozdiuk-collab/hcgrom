@@ -1090,6 +1090,19 @@ header::after {
   background: rgba(8, 11, 17, 0.72);
 }
 
+.seo-text {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.seo-text h2 {
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
 .footer__inner {
   min-height: 84px;
   display: flex;
