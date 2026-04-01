@@ -1173,6 +1173,32 @@ header::after {
   transform: translateY(-1px);
 }
 
+.club-note {
+  width: min(100% - 2.5rem, 900px);
+  margin: -38px auto 34px;
+}
+
+.club-note__inner {
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  background: linear-gradient(170deg, rgba(13, 18, 25, 0.86), rgba(10, 14, 20, 0.82));
+}
+
+.club-note h2 {
+  margin: 0 0 8px;
+  color: #eecf63;
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+  line-height: 1.25;
+}
+
+.club-note p {
+  margin: 0;
+  color: #b6c0cb;
+  font-size: 0.92rem;
+  line-height: 1.56;
+}
+
 .footer__inner {
   min-height: 84px;
   display: flex;
@@ -1472,6 +1498,26 @@ header::after {
   .final-section .cta-button {
     width: 100%;
     text-align: center;
+  }
+
+  .club-note {
+    width: calc(100% - 1.8rem);
+    margin: -10px auto 24px;
+  }
+
+  .club-note__inner {
+    padding: 14px 15px;
+    border-radius: 12px;
+  }
+
+  .club-note h2 {
+    font-size: 1rem;
+    margin-bottom: 7px;
+  }
+
+  .club-note p {
+    font-size: 0.9rem;
+    line-height: 1.52;
   }
 }
 
